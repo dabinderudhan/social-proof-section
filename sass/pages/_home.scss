@@ -1,0 +1,165 @@
+main {
+  max-width: 23.4375rem;
+  margin: 4rem 0;
+  padding-inline: 1.5rem;
+}
+
+.container {
+  grid-template-rows: repeat(3, min-content);
+  gap: 2.5rem;
+}
+
+.presentation {
+  gap: 1rem;
+  text-align: center;
+
+  & h1 {
+    color: $color-primary-dark;
+    font-weight: $fw-bolder;
+    line-height: 1.2;
+    padding: 0 2rem;
+    font-size: 2rem;
+  }
+
+  & p {
+    font-size: 0.8125rem;
+    padding: 0 1rem;
+  }
+}
+
+.rating {
+  gap: 1rem;
+
+  &-box {
+    background-color: $color-neutral-light;
+    width: 100%;
+
+    border-radius: 5px;
+    padding: 1rem 0;
+    gap: 0.5rem;
+  }
+
+  &-stars {
+    list-style: none;
+    gap: 0.5rem;
+    align-items: center;
+
+    & li img {
+      display: block;
+    }
+  }
+
+  &-paragraph {
+    color: $color-primary-dark;
+    font-weight: $fw-bolder;
+    justify-self: center;
+  }
+}
+
+.reviews {
+  gap: 1rem;
+
+  &-box {
+    background-color: $color-primary-dark;
+    padding: 2rem;
+    border-radius: 10px;
+    gap: 2rem;
+  }
+
+  &-description {
+    width: 100%;
+    gap: 1rem;
+    justify-content: start;
+
+    &--img {
+      border-radius: 50%;
+      width: 15%;
+    }
+
+    &--name {
+      color: $color-neutral-light;
+      font-weight: $fw-bold;
+    }
+
+    &--verified {
+      color: $color-primary-light;
+      font-size: 0.875rem;
+    }
+  }
+
+  &-opinion {
+    color: $color-neutral-light;
+    font-size: 0.8125rem;
+  }
+}
+
+@media (min-width: 75rem) {
+  main {
+    min-width: 75rem;
+    padding: 0;
+  }
+
+  .container {
+    grid-template-areas:
+      "presentation rating"
+      "reviews reviews";
+    grid-template-columns: 29.25rem auto;
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 1rem;
+    column-gap: 8rem;
+  }
+
+  .presentation {
+    grid-area: presentation;
+    width: 95%;
+    text-align: left;
+    gap: 0.1;
+
+    & h1 {
+      padding: 0 1rem;
+      font-size: 3rem;
+      font-weight: $fw-bolder;
+      line-height: 1;
+    }
+  }
+
+  .rating {
+    grid-area: rating;
+    align-items: start;
+
+    &-box {
+      flex-direction: row;
+      justify-content: start;
+      padding-inline: 2rem;
+      gap: 2rem;
+      max-width: 460px;
+
+      &--2 {
+        align-self: center;
+      }
+
+      &--3 {
+        align-self: end;
+      }
+    }
+
+    &-paragraph {
+      align-self: center;
+    }
+  }
+
+  .reviews {
+    grid-area: reviews;
+    flex-direction: row;
+    gap: 2rem;
+
+    &-box {
+      &--2 {
+        margin-top: 2rem;
+      }
+      &--3 {
+        margin-top: 4rem;
+      }
+    }
+  }
+}
