@@ -49,7 +49,8 @@ main {
     }
   }
 
-  &-paragraph {
+  &-heading {
+    font-size: 1rem;
     color: $color-primary-dark;
     font-weight: $fw-bolder;
     justify-self: center;
@@ -79,6 +80,7 @@ main {
     &--name {
       color: $color-neutral-light;
       font-weight: $fw-bold;
+      font-size: 1rem;
     }
 
     &--verified {
